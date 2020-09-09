@@ -25,22 +25,26 @@ export class IDropdownSettings {
   showSelectedItemsAtTop?: boolean;
   defaultOpen?: boolean;
   allowRemoteDataSearch?: boolean;
+  searchValue?: string;
 }
 
 export class ListItem {
-  id: String | number;
-  text: String | number;
+  id: string | number;
+  text: string | number;
   isDisabled?: boolean;
+  searchValue?: string;
 
   public constructor(source: any) {
     if (typeof source === 'string' || typeof source === 'number') {
       this.id = this.text = source;
       this.isDisabled = false;
+      this.searchValue = '';
     }
     if (typeof source === 'object') {
       this.id = source.id;
       this.text = source.text;
       this.isDisabled = source.isDisabled;
+      this.searchValue = source.searchValue;
     }
   }
 }

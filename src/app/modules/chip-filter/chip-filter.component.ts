@@ -104,6 +104,7 @@ export class AppChipFilterComponent implements ControlValueAccessor, OnInit, OnC
 
   @HostListener('scroll', ['$event'])
   onScroll(event: any) {
+    console.log(event);
     if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
       this.onScrolledToBottom.emit(true);
     }
@@ -140,6 +141,7 @@ export class AppChipFilterComponent implements ControlValueAccessor, OnInit, OnC
             id: item[this.settings.idField],
             text: item[this.settings.textField],
             isDisabled: item[this.settings.disabledField],
+            searchVlaye: item[this.settings.searchValue],
           })
     );
   }
