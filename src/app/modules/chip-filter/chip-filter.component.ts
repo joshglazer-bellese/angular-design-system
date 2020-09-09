@@ -104,7 +104,6 @@ export class AppChipFilterComponent implements ControlValueAccessor, OnInit, OnC
 
   @HostListener('scroll', ['$event'])
   onScroll(event: any) {
-    console.log(event);
     if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
       this.onScrolledToBottom.emit(true);
     }
